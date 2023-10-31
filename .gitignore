@@ -1,0 +1,4 @@
+__pycache__
+.vscode
+/semseg_ros2/media
+/semseg_ros2/weights

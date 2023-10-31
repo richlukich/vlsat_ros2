@@ -1,0 +1,1 @@
+uint32[] mask_poly # [x1, y1, x2, y2, ...]
