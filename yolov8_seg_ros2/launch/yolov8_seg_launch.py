@@ -21,13 +21,13 @@ def generate_launch_description():
                 "camera_ns", default_value="/sensum/left/"
             ),
             launch.actions.DeclareLaunchArgument(
-                "image_topic", default_value="/sensum/left/image_raw"
+                "image_topic", default_value="image_raw"
             ),
             launch.actions.DeclareLaunchArgument(
-                "segmentation_topic", default_value="segmentation_topic"
+                "segmentation_topic", default_value="segmentation"
             ),
             launch.actions.DeclareLaunchArgument(
-                "segmentation_color_topic", default_value="segmentation_color_topic"
+                "segmentation_color_topic", default_value="segmentation_color"
             ),
             # Nodes
             launch_ros.actions.Node(
