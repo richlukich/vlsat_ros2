@@ -20,4 +20,4 @@ docker build . \
     --build-arg UID=$(id -u) \
     --build-arg GID=$(id -g) \
     --build-arg NUM_THREADS=${NUM_THREADS} \
-    -t ${ARCH}foxy/semseg:latest
+    -t ${ARCH}_foxy/yolov8_seg:latest

@@ -28,12 +28,12 @@ docker run -it -d --rm \
         --env="DISPLAY=$DISPLAY" \
         --env="QT_X11_NO_MITSHM=1" \
         --privileged \
-        --name semseg \
+        --name yolov8_seg \
         --net=host \
         --ipc=host \
         --pid=host \
         -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-        -v `pwd`/../semseg_ros2:/home/docker_semseg/colcon_ws/src/semseg_ros2:rw \
-        -v `pwd`/../yolov8_seg_interfaces:/home/docker_semseg/colcon_ws/src/yolov8_seg_interfaces:rw \
-        ${ARCH}foxy/semseg:latest
+        -v `pwd`/../yolov8_seg_ros2:/home/docker_yolov8_seg/colcon_ws/src/yolov8_seg_ros2:rw \
+        -v `pwd`/../yolov8_seg_interfaces:/home/docker_yolov8_seg/colcon_ws/src/yolov8_seg_interfaces:rw \
+        ${ARCH}_foxy/yolov8_seg:latest
 xhost -

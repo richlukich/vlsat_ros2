@@ -1,4 +1,8 @@
 __pycache__
 .vscode
-/semseg_ros2/media
-/semseg_ros2/weights
+/docker/context
+/docker/Dockerfile.x86_64
+/docker/failed_trials
+/yolov8_seg_ros2/media
+/yolov8_seg_ros2/weights
+/yolov8_seg_ros2/yolov8_seg_ros2/__pycache__
