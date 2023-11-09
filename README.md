@@ -20,7 +20,7 @@ cd ~/colcon_ws
 colcon build --packages-select yolov8_seg_ros2 yolov8_seg_interfaces --symlink-install
 source install/setup.bash
 ```
-В папку weights пакета необходимо положить веса, например из  [папки с весами, полученными на датасете с препятствиями](https://disk.yandex.ru/d/-3Nz15ePPFSZiQ).
+В папку weights пакета _yolov8_seg_ros2_ необходимо положить веса, например из  [папки с весами, полученными на датасете с препятствиями](https://disk.yandex.ru/d/-3Nz15ePPFSZiQ).
 
 Запуск launch (необходимо специализировать namespace камеры, имя топика с изображениями и путь к весам модели):
 ```bash
