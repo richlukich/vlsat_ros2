@@ -19,7 +19,7 @@ class YOLOv8SegNode(Node):
         self.declare_parameter(
             "weights",
             "/home/docker_yolov8_seg/colcon_ws/src/yolov8_seg_ros2/weights/roboseg_S_5_cats.pt",
-        )
+            )
         self.weights = self.get_parameter("weights").get_parameter_value().string_value
 
         self.declare_parameter("device", "cuda:0")
