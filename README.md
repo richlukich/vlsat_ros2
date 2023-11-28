@@ -1,4 +1,7 @@
-Репозиторий содержит ROS2 (Foxy) интерфейс для работы с YOLOv8 на Jetson (версия JetPack 5).
+Репозиторий содержит ROS2 (Humble) интерфейс для работы с YOLOv8 на Jetson (версия JetPack 5).
+Dockerfile.aarch64, предназначенный для сборки на Jetson, наследуется от образа [jetson-ros2-ultralytics:latest-humble](https://hub.docker.com/repository/docker/ritaakichik/jetson-ros2-ultralytics/general), исходные файлы для сборки которого доступны в папке docker/docker_humble.
+Dockerfile для сборки ROS2 Foxy также представлен в папке docker.
+
 
 Представленные инструкции позволяют собрать 2 узла:
 - __yolov8_seg_node__, который слушает топик с изображениями и отправляет результаты сегментации в топик _segmentation_topic_ (формат определяется пакетом _yolov8_seg_interfaces_);
@@ -16,7 +19,7 @@ sudo ./build.sh
 
 Сборка пакета:
 ```bash
-cd ~/colcon_ws
+cd /colcon_ws
 colcon build --packages-select yolov8_seg_ros2 yolov8_seg_interfaces --symlink-install
 source install/setup.bash
 ```
