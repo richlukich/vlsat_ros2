@@ -50,7 +50,7 @@ class VisualizerNode(Node):
             image, segm_msg.masks, segm_msg.classes_ids
         )
 
-        segm_color_msg = self.br.cv2_to_imgmsg(segmentation_color, "rgb8")
+        segm_color_msg = self.br.cv2_to_imgmsg(segmentation_color, "bgr8")
         segm_color_msg.header = segm_msg.header
 
         self.pub_segmentation_color.publish(segm_color_msg)
