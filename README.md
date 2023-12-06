@@ -7,6 +7,15 @@ Dockerfile для сборки ROS2 Foxy также представлен в п
 - __yolov8_seg_node__, который слушает топик с изображениями и отправляет результаты сегментации в топик _segmentation_topic_ (формат определяется пакетом _yolov8_seg_interfaces_);
 - __visualizer_node__, который слушает топики _image_ и _segmentation_ и визуализирует результаты сегментации, отправляя изображения в _segmentation_color_topic_.
 
+На следующем изображении приведена диаграмма совместной работы узлов:
+![YOLOv8-ROS2-visual](media/ros2_yolov8_scheme.png)
+
+Тип _Objects_ - пользовательский, он определён в _yolov8_seg_interfaces_. Ниже приведена структура этого типа.
+![ROS2-Objects](media/ros_Objects.png)
+
+Пример визуализации __visualizer_node__ приведён ниже с расшифровкой цветовых кодов классов объектов.
+![ROS2-Objects](media/yolov8_vis.jpg)
+
 ## Сборка образа
 ```bash
 cd docker
