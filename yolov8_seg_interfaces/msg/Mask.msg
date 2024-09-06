@@ -1,1 +1,4 @@
-uint32[] mask_poly # [x1, y1, x2, y2, ...]
+int32 width
+int32 height
+Roi roi
+uint8[] mask_in_roi

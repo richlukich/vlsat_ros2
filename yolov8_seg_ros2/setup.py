@@ -20,7 +20,9 @@ setup(
     entry_points={
         "console_scripts": [
             'yolov8_seg_node = yolov8_seg_ros2.yolov8_seg_node:main',
-            'visualizer_node = yolov8_seg_ros2.visualizer_node:main'
+            'visualizer_node = yolov8_seg_ros2.visualizer_node:main',
+            'object_point_cloud_extraction_node = yolov8_seg_ros2.object_point_cloud_extraction_node:main',
+            'bounding_box_node = yolov8_seg_ros2.bounding_box_node:main'
         ],
     },
 )

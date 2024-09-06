@@ -1,6 +1,6 @@
-FROM nvcr.io/nvidia/cuda:11.1.1-devel-ubuntu20.04
+FROM nvcr.io/nvidia/cuda:12.1.1-devel-ubuntu22.04
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install system dependencies for convinient development inside container
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
@@ -16,32 +16,32 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 
 # Install PyTorch
 RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
+RUN python3 -m pip install torch==2.3.1+cu121 torchvision==0.18.1+cu121 -f https://download.pytorch.org/whl/torch_stable.html
 
 
-# Install ROS2 Foxy
+# Install ROS2 Humble
 RUN apt-get update \
     && apt-get install -y curl gnupg2 lsb-release \
     && curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg \
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null \
     && apt-get update \
     && apt-get install -y \
-        ros-foxy-ros-base \
+        ros-humble-ros-base \
         python3-colcon-common-extensions \
-        ros-foxy-cv-bridge \
+        ros-humble-cv-bridge \
     && rm -rf /var/lib/apt/lists/*
 
-RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-RUN apt update
-RUN apt install -y \
-    ros-foxy-ros2bag \
-    ros-foxy-rosbag2 \
-    ros-foxy-ros1-bridge \
-    ros-foxy-rosbag2-bag-v2-plugins \
-    ros-foxy-rosbag2-converter-default-plugins
+# RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+# RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+# RUN apt update
+# RUN apt install -y \
+#     ros-humble-ros2bag \
+#     ros-humble-rosbag2 \
+#     ros-humble-ros1-bridge \
+#     ros-humble-rosbag2-bag-v2-plugins \
+#     ros-humble-rosbag2-converter-default-plugins
 
-RUN python3 -m pip install opencv-python ultralytics
+RUN python3 -m pip install opencv-python ultralytics open3d
 
 # add user and his password
 ARG USER=docker_semseg
