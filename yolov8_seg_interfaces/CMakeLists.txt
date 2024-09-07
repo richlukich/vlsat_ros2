@@ -46,6 +46,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/ObjectPointClouds.msg"
   "msg/BoundingBox.msg"
   "msg/SegTrack.msg"
+  "msg/Relation.msg"
+  "msg/Relationlist.msg"
   DEPENDENCIES std_msgs sensor_msgs geometry_msgs
   # DEPENDENCIES geometry_msgs
 )
