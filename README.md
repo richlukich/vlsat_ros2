@@ -38,6 +38,10 @@ source install/setup.bash
 ```bash
 ros2 launch src/yolov8_seg_ros2/launch/yolov8_seg_launch.py camera_ns:="/sensum/left/" image_topic:=image_raw weights:="src/yolov8_seg_ros2/weights/roboseg_S_5_cats.pt"
 ```
+Запуск python
 
+```bash
+python3 src/yolov8_seg_ros2/yolov8_seg_ros2/vslat_node.py
+```
 
 # ros2 launch src/yolov8_seg_ros2/launch/yolov8_seg_launch.py camera_ns:="/camera/camera/color/" image_topic:=image_raw/compressed
